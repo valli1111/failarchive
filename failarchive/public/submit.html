@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Failure Story - FailArchive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <h1>FailArchive</h1>
+                <p>Real failures. Real lessons.</p>
+            </div>
+            <div class="nav-links">
+                <a href="/">Explore</a>
+                <a href="/submit.html" class="active">Submit</a>
+                <a href="/bookmarks.html">Saved</a>
+                <a href="/admin.html" class="admin-link">Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="submit-page">
+        <div class="container submit-container">
+            <div class="submit-header">
+                <h1>Share Your Failure</h1>
+                <p>Help others learn from your experience. All submissions are anonymous by default.</p>
+            </div>
+
+            <form id="submitForm" class="submit-form">
+                <div class="form-section">
+                    <h3>Basic Information</h3>
+
+                    <div class="form-group">
+                        <label for="title">What was the failure? *</label>
+                        <input type="text" id="title" name="title" placeholder="e.g., 'We hired too fast and burned through runway'" required>
+                        <small>A short, punchy title</small>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="e.g., 'TechStartup Inc'">
+                            <small>Optional, can remain anonymous</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="industry">Industry *</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Select industry</option>
+                                <option value="Startup">Startup</option>
+                                <option value="SaaS">SaaS</option>
+                                <option value="Product">Product</option>
+                                <option value="Agency">Agency</option>
+                                <option value="Marketplace">Marketplace</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="category">Category *</label>
+                            <select id="category" name="category" required>
+                                <option value="">Select category</option>
+                                <option value="hiring">Hiring & People</option>
+                                <option value="product">Product</option>
+                                <option value="operations">Operations</option>
+                                <option value="finance">Finance</option>
+                                <option value="fundraising">Fundraising</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="technology">Technology</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="companyStage">Company Stage</label>
+                            <select id="companyStage" name="companyStage">
+                                <option value="">Select stage</option>
+                                <option value="pre-seed">Pre-seed</option>
+                                <option value="seed">Seed</option>
+                                <option value="series-a">Series A</option>
+                                <option value="series-b">Series B+</option>
+                                <option value="growth">Growth</option>
+                                <option value="mature">Mature</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>The Story</h3>
+
+                    <div class="form-group">
+                        <label for="story">What Happened? *</label>
+                        <textarea id="story" name="story" placeholder="Tell the story. What was the situation? How did you find out?" rows="5" required></textarea>
+                        <small>Provide context and details</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whatWentWrong">What Went Wrong? *</label>
+                        <textarea id="whatWentWrong" name="what_went_wrong" placeholder="What was the root cause? What mistakes did you make?" rows="5" required></textarea>
+                        <small>Be honest about the mistakes</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whatLearned">What Did You Learn? *</label>
+                        <textarea id="whatLearned" name="what_learned" placeholder="What's the key lesson? How would you do it differently?" rows="5" required></textarea>
+                        <small>This is the most valuable part</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recovery">How Did You Recover? (Optional)</label>
+                        <textarea id="recovery" name="recovery" placeholder="How did you bounce back? What actions did you take?" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Additional Info</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="timeLost">Time Lost</label>
+                            <input type="text" id="timeLost" name="time_lost" placeholder="e.g., '6 months + $200k'">
+                        </div>
+                        <div class="form-group">
+                            <label for="impactLevel">Impact Level</label>
+                            <select id="impactLevel" name="impact_level">
+                                <option value="1">1 - Minor</option>
+                                <option value="2">2 - Moderate</option>
+                                <option value="3" selected>3 - Significant</option>
+                                <option value="4">4 - Major</option>
+                                <option value="5">5 - Critical</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tags">Tags (comma-separated, optional)</label>
+                        <input type="text" id="tags" name="tags" placeholder="e.g., hiring, growth, fundraising">
+                        <small>Help others find relevant stories</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="author">Your Name (optional)</label>
+                        <input type="text" id="author" name="author" placeholder="Leave blank to be anonymous">
+                        <small>Optional - will be displayed with your story</small>
+                    </div>
+                </div>
+
+                <div class="form-section consent">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="consent" required>
+                        <span>I agree that this story is truthful and can be shared on FailArchive</span>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary btn-large">Submit Story</button>
+                    <button type="button" onclick="window.location.href='/'" class="btn-secondary">Cancel</button>
+                </div>
+
+                <div id="submitMessage" class="submit-message" style="display:none;"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About FailArchive</h4>
+                    <p>A community platform for sharing business failures and lessons learned.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/submit.js"></script>
+</body>
+</html>
