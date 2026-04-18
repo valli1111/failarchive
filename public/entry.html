@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Failure Story - FailArchive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <h1>FailArchive</h1>
+                <p>Real failures. Real lessons.</p>
+            </div>
+            <div class="nav-links">
+                <a href="/">Explore</a>
+                <a href="/submit.html">Submit</a>
+                <a href="/bookmarks.html">Saved</a>
+                <a href="/admin.html" class="admin-link">Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="entry-detail">
+        <div class="container">
+            <button class="back-button" onclick="window.location.href='/'">← Back</button>
+
+            <div class="entry-header">
+                <h1 id="entryTitle"></h1>
+                <div class="entry-meta">
+                    <span class="badge" id="categoryBadge"></span>
+                    <span class="company" id="companyName"></span>
+                    <span class="stage" id="stageInfo"></span>
+                    <span class="date" id="entryDate"></span>
+                </div>
+                <div class="entry-actions">
+                    <button class="action-btn" onclick="toggleBookmark()">
+                        <span id="bookmarkIcon">☆</span> Save
+                    </button>
+                    <button class="action-btn" onclick="upvoteEntry()">
+                        <span>👍</span> <span id="upvoteCount">0</span>
+                    </button>
+                    <button class="action-btn" onclick="beenThereEntry()">
+                        <span>🙌</span> <span id="beenThereCount">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="entry-content">
+                <section class="content-section">
+                    <h3>What Happened</h3>
+                    <p id="entryStory"></p>
+                </section>
+
+                <section class="content-section">
+                    <h3>What Went Wrong</h3>
+                    <p id="entryWentWrong"></p>
+                </section>
+
+                <section class="content-section highlight">
+                    <h3>Key Lesson</h3>
+                    <p id="entryLearned"></p>
+                </section>
+
+                <section class="content-section" id="recoverySection" style="display:none;">
+                    <h3>How They Recovered</h3>
+                    <p id="entryRecovery"></p>
+                </section>
+
+                <section class="content-section impact">
+                    <h3>Impact Level</h3>
+                    <div class="impact-level">
+                        <div class="impact-meter" id="impactMeter"></div>
+                        <span id="impactText">Critical</span>
+                    </div>
+                </section>
+
+                <section class="content-section author-section">
+                    <p class="author-info">
+                        Shared by <strong id="authorName">Anonymous</strong>
+                        <span class="experience" id="authorExp"></span>
+                    </p>
+                </section>
+            </div>
+
+            <div class="tips-section">
+                <h2>Community Tips</h2>
+                <div id="tipsList" class="tips-list">
+                    <!-- Tips will load here -->
+                </div>
+
+                <div class="add-tip-form">
+                    <h4>Add Your Tip</h4>
+                    <textarea id="tipContent" placeholder="Share your experience or advice..."></textarea>
+                    <div class="tip-form-row">
+                        <input type="text" id="tipAuthor" placeholder="Your name (optional)">
+                        <input type="number" id="tipExperience" placeholder="Years of experience" min="0" max="70">
+                    </div>
+                    <button onclick="submitTip()" class="btn-primary">Share Tip</button>
+                </div>
+            </div>
+
+            <div class="related-section">
+                <h2>Similar Failures</h2>
+                <div id="relatedList" class="entries-grid">
+                    <!-- Related entries will load here -->
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About FailArchive</h4>
+                    <p>A community platform for sharing business failures and lessons learned.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Explore</a></li>
+                        <li><a href="/submit.html">Submit Story</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/entry.js"></script>
+</body>
+</html>
